@@ -1,0 +1,57 @@
+/*
+===========================================================
+            Library Management System - Java
+===========================================================
+
+Description:
+A simple Java program to manage books in a library using
+Object-Oriented Programming concepts.
+
+Concepts Used:
+- Classes and Objects
+- Constructor
+- ArrayList
+- Methods
+
+Author: Senthil Nathan A
+===========================================================
+*/
+
+import java.util.ArrayList;
+
+class Book {
+    int id;
+    String title;
+    String author;
+
+    Book(int id, String title, String author) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+    }
+
+    void display() {
+        System.out.println("Book ID : " + id);
+        System.out.println("Title   : " + title);
+        System.out.println("Author  : " + author);
+        System.out.println("---------------------------");
+    }
+}
+
+public class LibraryManagementSystem {
+
+    public static void main(String[] args) {
+
+        ArrayList<Book> books = new ArrayList<>();
+
+        books.add(new Book(1, "Java Programming", "James Gosling"));
+        books.add(new Book(2, "Python Basics", "Guido van Rossum"));
+        books.add(new Book(3, "SQL Fundamentals", "Oracle"));
+
+        System.out.println("Library Book Details\n");
+
+        for(Book book : books){
+            book.display();
+        }
+    }
+}
